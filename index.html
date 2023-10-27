@@ -8,74 +8,25 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</head>
-<body>
-  <div style="height:200vh; background-color:bisque;">
-    <h1 style="color:sienna;"> Leading Section</h1>
-  </div>
+<div style="height:200vh; background-color:royalblue;"></div>
 
-  <div class="container">
-    <div class="video-section" style="height:200vh;">
-      <div class="sticky-top">
-        <video id="video1" src="https://web.cw.com.tw/climate-2020/landing/cover.mp4" style="width:100%" muted></video>
-      </div>
-    </div>
+<div class="video-section" style="height:100vh;">
+  <div class="sticky-top">
+    <video id="video1" src="https://web.cw.com.tw/climate-2020/landing/cover.mp4" style="width:100%" muted></video>
   </div>
+</div>
 
-  <div style="height:200vh; background-color:bisque;">
-    <h1 style="color:sienna;">Middle Section</h1>
+<div class="middle-section" style="height:200vh; background-color:bisque;"></div> <!-- 新的 middle section -->
+
+<div class="video-section" style="height:100vh;">
+  <div class="sticky-top">
+    <video id="video2" src="https://web.cw.com.tw/climate-2020/deforestation/cover.mp4" style="width:100%" muted></video>
   </div>
+</div>
 
-  <div class="container">
-    <div class="video-section" style="height:200vh;">
-      <div class="sticky-top">
-        <video id="video2" src="https://web.cw.com.tw/climate-2020/deforestation/cover.mp4" style="width:100%" muted></video>
-      </div>
-    </div>
-  </div>
-
-  <div style="height:200vh; background:saddlebrown;">
-    <h1 style="color:bisque;">Ending Section</h1>
-  </div> <!-- 新的 ending section -->
-  
-  <script>
-    $(function() {
-      const videoElement1 = $('#video1').get(0);
-      const videoElement2 = $('#video2').get(0);
-    
-      if (!videoElement1 || !videoElement2) {
-        console.error("Video element not found");
-        return;
-      }
-    
-      const videoSections = $('.video-section');
-    
-      $(window).scroll(function() {
-        videoSections.each(function() {
-          const videoSection = $(this);
-          const video = videoSection.find('video').get(0);
-          const sectionTop = videoSection.offset().top;
-          const sectionBottom = sectionTop + videoSection.height();
-          const currentScrollPosition = $(document).scrollTop();
-    
-          if (currentScrollPosition >= sectionTop && currentScrollPosition < sectionBottom) {
-            // In the video section
-            if (video.duration) {
-              video.play();
-            }
-          } else {
-            // Not in the video section
-            video.pause();
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+<div style="height:200vh; background:grey;"></div> <!-- 新的 ending section -->
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script><script  src="./script.js"></script>
+
 </body>
 </html>
